@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{AA44AE97-1F45-4700-9E42-5BBAD7613249}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicos", "Servicos", "{D97F368E-B1B5-4277-BF7A-CF9C0E36E361}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorio", "Repositorio", "{9B969086-CFF9-4074-BBB1-FC6D1DC5E582}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentacao", "Apresentacao", "{A33556CC-4C5A-4E3B-A66A-51F50E9DA3A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSCadastroMedicoPacienteDominio", "Dominio\MSCadastroMedicoPacienteDominio.csproj", "{AD6E076C-88B9-46E5-A231-8AB4BEF6F638}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSCadastroMedicoPacienteRepositorio", "Repositorio\MSCadastroMedicoPacienteRepositorio.csproj", "{689DB03C-DF48-4290-8A8A-3D838A40682E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSCadastroMedicoPacienteServicos", "Servicos\MSCadastroMedicoPacienteServicos.csproj", "{CA281172-9C23-4BE8-826A-34C64541FBA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSCadastroMedicoPacienteApresentacao", "Apresentacao\MSCadastroMedicoPacienteApresentacao.csproj", "{6B4DD817-57DB-4F13-98E4-3D3B1A79C42F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4FDFC353-A6E8-4E1D-9DD1-55DA97709425}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSCadastroMedicoPacienteShared", "Shared\MSCadastroMedicoPacienteShared.csproj", "{67A6D81B-422A-46FC-88DE-C95FB2A65BA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FDEEAC67-FC88-4576-BB89-D9002ED51738}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSCadastroMedicoPacienteTests", "Testes\MSCadastroMedicoPacienteTests.csproj", "{C5C31F6C-4E2D-4E59-9D34-38F63A5A9181}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD6E076C-88B9-46E5-A231-8AB4BEF6F638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD6E076C-88B9-46E5-A231-8AB4BEF6F638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD6E076C-88B9-46E5-A231-8AB4BEF6F638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD6E076C-88B9-46E5-A231-8AB4BEF6F638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689DB03C-DF48-4290-8A8A-3D838A40682E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689DB03C-DF48-4290-8A8A-3D838A40682E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689DB03C-DF48-4290-8A8A-3D838A40682E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689DB03C-DF48-4290-8A8A-3D838A40682E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA281172-9C23-4BE8-826A-34C64541FBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA281172-9C23-4BE8-826A-34C64541FBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA281172-9C23-4BE8-826A-34C64541FBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA281172-9C23-4BE8-826A-34C64541FBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4DD817-57DB-4F13-98E4-3D3B1A79C42F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4DD817-57DB-4F13-98E4-3D3B1A79C42F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4DD817-57DB-4F13-98E4-3D3B1A79C42F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4DD817-57DB-4F13-98E4-3D3B1A79C42F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67A6D81B-422A-46FC-88DE-C95FB2A65BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67A6D81B-422A-46FC-88DE-C95FB2A65BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67A6D81B-422A-46FC-88DE-C95FB2A65BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67A6D81B-422A-46FC-88DE-C95FB2A65BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5C31F6C-4E2D-4E59-9D34-38F63A5A9181}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C31F6C-4E2D-4E59-9D34-38F63A5A9181}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C31F6C-4E2D-4E59-9D34-38F63A5A9181}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C31F6C-4E2D-4E59-9D34-38F63A5A9181}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD6E076C-88B9-46E5-A231-8AB4BEF6F638} = {AA44AE97-1F45-4700-9E42-5BBAD7613249}
+		{689DB03C-DF48-4290-8A8A-3D838A40682E} = {9B969086-CFF9-4074-BBB1-FC6D1DC5E582}
+		{CA281172-9C23-4BE8-826A-34C64541FBA3} = {D97F368E-B1B5-4277-BF7A-CF9C0E36E361}
+		{6B4DD817-57DB-4F13-98E4-3D3B1A79C42F} = {A33556CC-4C5A-4E3B-A66A-51F50E9DA3A7}
+		{67A6D81B-422A-46FC-88DE-C95FB2A65BA0} = {4FDFC353-A6E8-4E1D-9DD1-55DA97709425}
+		{C5C31F6C-4E2D-4E59-9D34-38F63A5A9181} = {FDEEAC67-FC88-4576-BB89-D9002ED51738}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {56601849-9C1C-40A4-BA1C-6A4AE30990D3}
+	EndGlobalSection
+EndGlobal
