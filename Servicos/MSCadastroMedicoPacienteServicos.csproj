@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\MSCadastroMedicoPacienteDominio.csproj" />
+    <ProjectReference Include="..\Repositorio\MSCadastroMedicoPacienteRepositorio.csproj" />
+    <ProjectReference Include="..\Shared\MSCadastroMedicoPacienteShared.csproj" />
+  </ItemGroup>
+
 </Project>
