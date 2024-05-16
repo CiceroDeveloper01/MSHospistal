@@ -1,10 +1,10 @@
 ﻿using MSCadastroMedicoPacienteDominio.Usuarios;
 
-namespace MSCadastroMedicoPacienteDominio.InterfacesGenericas;
+namespace MSCadastroMedicoPacienteDominio.Interfaces.Generica;
 
 public interface IBaseDominioCRUD
 {
-    int ID { get; } 
+    int ID { get; }
     string Nome { get; }
     string Rg { get; }
     string Cpf { get; }
