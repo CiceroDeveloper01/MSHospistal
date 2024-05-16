@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using MSCadastroMedicoPacienteDominio.Medicos;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Diagnostics;
 
 namespace MSCadastroMedicoPacienteApresentacao.Controllers;
 
@@ -10,24 +13,26 @@ public class MedicoController : AbstractController<MedicoRequisicao>
     [HttpPost()]
     [Route("v1/medico/add")]
     [SwaggerResponse(201, "Ao Criar Com Exito o Objeto")]
-    [SwaggerResponse(202, "Ao Criar Com Exito o Objeto")]
+    [SwaggerResponse(202, "Uma requisição foi aceita para processamento, mas não foi concluída")]
+    [SwaggerResponse(400, "A solicitação foi mal formatada ou inválida")]
     [SwaggerResponse(401, "Caso Não Esteja Autorizado")]
     [SwaggerResponse(403, "Caso As Suas Pemissões Sejam Insuficientes")]
-    [SwaggerResponse(500, "Informações Não Localizadas")]
+    [SwaggerResponse(500, "Erro Interno, Tente Novamente Mais Tarde")]
     [Authorize]
     public override Task<IActionResult> Add([FromBody] MedicoRequisicao domain)
     {
         throw new NotImplementedException();
     }
 
-
     [HttpDelete()]
     [Route("v1/medico/delete")]
-    [SwaggerResponse(201, "Ao Criar Com Exito o Objeto")]
-    [SwaggerResponse(202, "Ao Criar Com Exito o Objeto")]
+    [SwaggerResponse(202, "Uma requisição foi aceita para processamento, mas não foi concluída")]
+    [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
+    [SwaggerResponse(400, "A solicitação foi mal formatada ou inválida")]
     [SwaggerResponse(401, "Caso Não Esteja Autorizado")]
     [SwaggerResponse(403, "Caso As Suas Pemissões Sejam Insuficientes")]
-    [SwaggerResponse(500, "Informações Não Localizadas")]
+    [SwaggerResponse(500, "Erro Interno, Tente Novamente Mais Tarde")]
+    [Authorize]
     public override Task<IActionResult> Delete([FromBody] MedicoRequisicao domain)
     {
         throw new NotImplementedException();
@@ -35,11 +40,14 @@ public class MedicoController : AbstractController<MedicoRequisicao>
 
     [HttpGet()]
     [Route("v1/medico/GetAll")]
-    [SwaggerResponse(200, "Recurso Encontrado")]
-    [SwaggerResponse(404, "Ao Criar Com Exito o Objeto")]
+    [SwaggerResponse(200, "Exito no Trabalho")]
+    [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
+    [SwaggerResponse(400, "A solicitação foi inválida ou mal formatada")]
+    [SwaggerResponse(404, "O recurso solicitado não foi encontrado")]
     [SwaggerResponse(401, "Caso Não Esteja Autorizado")]
     [SwaggerResponse(403, "Caso As Suas Pemissões Sejam Insuficientes")]
     [SwaggerResponse(500, "Informações Não Localizadas")]
+    [Authorize]
     public override Task<IActionResult> GetAll([FromBody] MedicoRequisicao domain)
     {
         throw new NotImplementedException();
@@ -47,11 +55,14 @@ public class MedicoController : AbstractController<MedicoRequisicao>
 
     [HttpGet()]
     [Route("v1/medico/GetId")]
-    [SwaggerResponse(201, "Ao Criar Com Exito o Objeto")]
-    [SwaggerResponse(202, "Ao Criar Com Exito o Objeto")]
+    [SwaggerResponse(200, "Exito no Trabalho")]
+    [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
+    [SwaggerResponse(400, "A solicitação foi inválida ou mal formatada")]
+    [SwaggerResponse(404, "O recurso solicitado não foi encontrado")]
     [SwaggerResponse(401, "Caso Não Esteja Autorizado")]
     [SwaggerResponse(403, "Caso As Suas Pemissões Sejam Insuficientes")]
     [SwaggerResponse(500, "Informações Não Localizadas")]
+    [Authorize]
     public override Task<IActionResult> GetId(int ID)
     {
         throw new NotImplementedException();
@@ -59,11 +70,15 @@ public class MedicoController : AbstractController<MedicoRequisicao>
 
     [HttpPut()]
     [Route("v1/medico/update")]
-    [SwaggerResponse(201, "Ao Criar Com Exito o Objeto")]
-    [SwaggerResponse(202, "Ao Criar Com Exito o Objeto")]
+    [SwaggerResponse(200, "Exito no Trabalho")]
+    [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
+    [SwaggerResponse(400, "A solicitação foi mal formatada ou inválida")]
     [SwaggerResponse(401, "Caso Não Esteja Autorizado")]
     [SwaggerResponse(403, "Caso As Suas Pemissões Sejam Insuficientes")]
-    [SwaggerResponse(500, "Informações Não Localizadas")]
+    [SwaggerResponse(404, "O recurso solicitado não foi encontrado")]
+    [SwaggerResponse(409, "Houve uma conflito ao processar a solicitação")]
+    [SwaggerResponse(500, "Erro Interno, Tente Novamente Mais Tarde")]
+    [Authorize]
     public override Task<IActionResult> Update([FromBody] MedicoRequisicao domain)
     {
         throw new NotImplementedException();
