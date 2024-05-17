@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
 
 namespace MSCadastroMedicoPacienteRepositorio;
 
@@ -18,14 +19,14 @@ public class UnitOfWork : IUnitOfWork
         _context.SaveChanges();
     }
 
-    public IRepository<T> GetRepository<T>() where T : class
+    public IRepositorio<T> GetRepository<T>() where T : class
     {
         if (_repositories.ContainsKey(typeof(T)))
         {
-            return _repositories[typeof(T)] as IRepository<T>;
+            return _repositories[typeof(T)] as IRepositorio<T>;
         }
 
-        var repository = new Repository<T>(_context);
+        var repository = new Repositorio<T>(_context);
         _repositories.Add(typeof(T), repository);
         return repository;
     }

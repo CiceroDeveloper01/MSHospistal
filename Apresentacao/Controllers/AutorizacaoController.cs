@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using MSCadastroMedicoPacienteDominio.Interfaces.Servicos;
 using MSCadastroMedicoPacienteDominio.Usuarios;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -7,16 +7,35 @@ namespace MSCadastroMedicoPacienteApresentacao.Controllers;
 
 public class AutorizacaoController : Controller
 {
-    [HttpGet()]
-    [Route("v1/medico/GetId")]
+    private readonly IServicoUsuario _servicoUsuario;
+    private readonly ILogger<AutorizacaoController> _logger;
+
+    public AutorizacaoController(IServicoUsuario servicoUsuario, ILogger<AutorizacaoController> logger)
+    {
+        _servicoUsuario = servicoUsuario;
+        _logger = logger;
+    }
+
+    [HttpPost()]
+    [Route("v1/autorizacao")]
     [SwaggerResponse(200, "Exito no Trabalho")]
     [SwaggerResponse(400, "A solicitação foi inválida ou mal formatada")]
     [SwaggerResponse(401, "Caso Não Esteja Autorizado")]
-    [SwaggerResponse(403, "Caso As Suas Pemissões Sejam Insuficientes")]
+    [SwaggerResponse(403, "Caso As Suas Permissões Sejam Insuficientes")]
     [SwaggerResponse(500, "Informações Não Localizadas")]
-    [Authorize]
-    public Task<IActionResult> Autenticacao([FromBody] UsuarioRequisicao usuarioRequisicao)
+    public async Task<IActionResult> Autenticacao([FromBody] UsuarioRequisicao usuarioRequisicao)
     {
-        throw new NotImplementedException();
+        try
+        {
+            _logger.LogInformation($@"Iniciando a Controller de Autenticação");
+
+            var resposta = await _servicoUsuario.Autenticacao(usuarioRequisicao);
+        }
+        catch(Exception ex) 
+        { 
+        
+        }
+        
+        
     }
 }

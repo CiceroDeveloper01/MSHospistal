@@ -1,6 +1,6 @@
 ﻿namespace MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
 
-public interface IRepository<T> where T : class
+public interface IRepositorio<T> where T : class
 {
     IQueryable<T> GetAll();
     void Add(T entity);

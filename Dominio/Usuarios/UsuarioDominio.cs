@@ -1,7 +1,9 @@
 ﻿using MSCadastroMedicoPacienteDominio.Enum;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MSCadastroMedicoPacienteDominio.Usuarios;
 
+[Table("TB_Usuario")]
 public class UsuarioDominio
 {
     public int ID { get; private set; }

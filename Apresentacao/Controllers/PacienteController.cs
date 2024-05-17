@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MSCadastroMedicoPacienteDominio.Interfaces.Servicos;
 using MSCadastroMedicoPacienteDominio.Pacientes;
 using Swashbuckle.AspNetCore.Annotations;
 
@@ -7,8 +8,17 @@ namespace MSCadastroMedicoPacienteApresentacao.Controllers;
 
 public class PacienteController : AbstractController<PacienteRequisicao>
 {
+    private readonly IServicoPaciente _servicoPaciente;
+    private readonly ILogger<PacienteController> _logger;
+
+    public PacienteController(IServicoPaciente servicoPaciente, ILogger<PacienteController> logger)
+    {
+        _servicoPaciente = servicoPaciente;
+        _logger = logger;
+    }
+
     [HttpPost()]
-    [Route("v1/medico/add")]
+    [Route("v1/paciente/add")]
     [SwaggerResponse(201, "Ao Criar Com Exito o Objeto")]
     [SwaggerResponse(202, "Uma requisição foi aceita para processamento, mas não foi concluída")]
     [SwaggerResponse(400, "A solicitação foi mal formatada ou inválida")]
@@ -22,7 +32,7 @@ public class PacienteController : AbstractController<PacienteRequisicao>
     }
 
     [HttpDelete()]
-    [Route("v1/medico/delete")]
+    [Route("v1/paciente/delete")]
     [SwaggerResponse(202, "Uma requisição foi aceita para processamento, mas não foi concluída")]
     [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
     [SwaggerResponse(400, "A solicitação foi mal formatada ou inválida")]
@@ -36,7 +46,7 @@ public class PacienteController : AbstractController<PacienteRequisicao>
     }
 
     [HttpGet()]
-    [Route("v1/medico/GetAll")]
+    [Route("v1/paciente/GetAll")]
     [SwaggerResponse(200, "Exito no Trabalho")]
     [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
     [SwaggerResponse(400, "A solicitação foi inválida ou mal formatada")]
@@ -51,7 +61,7 @@ public class PacienteController : AbstractController<PacienteRequisicao>
     }
 
     [HttpGet()]
-    [Route("v1/medico/GetId")]
+    [Route("v1/paciente/GetId")]
     [SwaggerResponse(200, "Exito no Trabalho")]
     [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
     [SwaggerResponse(400, "A solicitação foi inválida ou mal formatada")]
@@ -66,7 +76,7 @@ public class PacienteController : AbstractController<PacienteRequisicao>
     }
 
     [HttpPut()]
-    [Route("v1/medico/update")]
+    [Route("v1/paciente/update")]
     [SwaggerResponse(200, "Exito no Trabalho")]
     [SwaggerResponse(204, "A solicitação foi concluída com sucesso, mas não há nenhum conteúdo a retornar")]
     [SwaggerResponse(400, "A solicitação foi mal formatada ou inválida")]

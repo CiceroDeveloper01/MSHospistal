@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
 
 namespace MSCadastroMedicoPacienteRepositorio;
 
-public class Repository<T> : IRepository<T> where T : class
+public class Repositorio<T> : IRepositorio<T> where T : class
 {
     private readonly DbContext _context;
 
-    public Repository(DbContext context)
+    public Repositorio(DbContext context)
     {
         _context = context ?? throw new ArgumentNullException(nameof(context));
     }

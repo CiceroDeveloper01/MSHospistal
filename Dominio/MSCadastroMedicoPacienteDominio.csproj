@@ -10,4 +10,9 @@
     <ProjectReference Include="..\Shared\MSCadastroMedicoPacienteShared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pacientes\Requisicao\" />
+    <Folder Include="Usuarios\Resposta\" />
+  </ItemGroup>
+
 </Project>
