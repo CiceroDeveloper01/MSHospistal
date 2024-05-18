@@ -1,15 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
+﻿using MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
 
 namespace MSCadastroMedicoPacienteRepositorio;
 
 public class Repositorio<T> : IRepositorio<T> where T : class
 {
-    private readonly DbContext _context;
+    protected readonly ApplicationDbContext _context;
 
-    public Repositorio(DbContext context)
+    public Repositorio(ApplicationDbContext context)
     {
-        _context = context ?? throw new ArgumentNullException(nameof(context));
+        _context = context ;
     }
 
     public IQueryable<T> GetAll()

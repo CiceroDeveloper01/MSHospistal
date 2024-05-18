@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MSCadastroMedicoPacienteDominio.Interfaces.Servicos;
+using MSCadastroMedicoPacienteDominio.Interfaces.Servicos.Pacientes;
 using MSCadastroMedicoPacienteDominio.Pacientes;
 using Swashbuckle.AspNetCore.Annotations;
 

@@ -1,10 +1,10 @@
-﻿using MSCadastroMedicoPacienteDominio.Interfaces.Servicos;
+﻿using MSCadastroMedicoPacienteDominio.Interfaces.Servicos.Pacientes;
 using MSCadastroMedicoPacienteDominio.Pacientes;
 using MSCadastroMedicoPacienteShared.Comandos.Interfaces;
 
-namespace MSCadastroMedicoPacienteServicos.Pacientes;
+namespace MSCadastroMedicoPacienteServicos.Pacientes.Validadores;
 
-public class PacienteValidacao : IServicoPaciente
+public class PacienteValidar : IServicoPaciente
 {
     public Task<IComandoResultado> Add(PacienteRequisicao requisicao)
     {

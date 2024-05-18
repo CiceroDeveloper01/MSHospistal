@@ -1,4 +1,4 @@
-﻿using MSCadastroMedicoPacienteDominio.Interfaces.Servicos;
+﻿using MSCadastroMedicoPacienteDominio.Interfaces.Servicos.Pacientes;
 using MSCadastroMedicoPacienteDominio.Pacientes;
 using MSCadastroMedicoPacienteShared.Comandos.Interfaces;
 

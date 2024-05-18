@@ -8,8 +8,9 @@ public class UsuarioRepositorio : Repositorio<UsuarioDominio>, IRepositorioUsuar
 {
     public UsuarioRepositorio(DbContext context) : base(context) { }
 
-    public Task<UsuarioDominio> Autenticacao(UsuarioRequisicao usuarioRequisicao)
+    public async Task<UsuarioDominio> Autenticacao(UsuarioRequisicaoAutenticacao usuarioRequisicao)
     {
-        throw new NotImplementedException();
+        return await _context.Set<UsuarioDominio>().Where(x => x.Email == usuarioRequisicao.Email
+        && x.Senha == x.Senha).FirstOrDefaultAsync();
     }
 }

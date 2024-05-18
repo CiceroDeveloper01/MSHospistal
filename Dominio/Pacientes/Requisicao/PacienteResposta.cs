@@ -1,6 +1,6 @@
 ﻿using MSCadastroMedicoPacienteDominio.Usuarios;
 
-namespace MSCadastroMedicoPacienteDominio.Pacientes;
+namespace MSCadastroMedicoPacienteDominio.Pacientes.Requisicao;
 
 public class PacienteResposta
 {

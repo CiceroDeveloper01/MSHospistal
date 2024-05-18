@@ -1,5 +1,5 @@
-﻿using MSCadastroMedicoPacienteDominio.Interfaces.Servicos;
-using MSCadastroMedicoPacienteDominio.Medicos;
+﻿using MSCadastroMedicoPacienteDominio.Interfaces.Servicos.Medicos;
+using MSCadastroMedicoPacienteDominio.Medicos.Requisicao;
 using MSCadastroMedicoPacienteShared.Comandos.Interfaces;
 
 public class MedicoServico : IServicoMedico

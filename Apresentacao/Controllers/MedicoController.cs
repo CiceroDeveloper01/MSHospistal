@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
-using MSCadastroMedicoPacienteDominio.Medicos;
+using MSCadastroMedicoPacienteDominio.Medicos.Requisicao;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Diagnostics;
 

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MSCadastroMedicoPacienteRepositorio;
+using MSCadastroMedicoPacienteServicos;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,13 +12,18 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddDIRepositorio();
+
+
 
 
 
 builder.Services.AddDbContext<DbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
+builder.Services.AddDIRepositorio();
+builder.Services.AddDIValidacao();
+builder.Services.AddDIServico();
 
 var app = builder.Build();
 

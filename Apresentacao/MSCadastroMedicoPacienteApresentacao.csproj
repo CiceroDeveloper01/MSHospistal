@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Dominio\MSCadastroMedicoPacienteDominio.csproj" />
     <ProjectReference Include="..\Repositorio\MSCadastroMedicoPacienteRepositorio.csproj" />
+    <ProjectReference Include="..\Servicos\MSCadastroMedicoPacienteServicos.csproj" />
   </ItemGroup>
 
 </Project>
