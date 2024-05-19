@@ -10,13 +10,13 @@ namespace MSCadastroMedicoPacienteServicos.Usuarios;
 
 public class UsuarioAutenticacaoServico : IServicoUsuarioAutenticacao
 {
-    private readonly IUnitOfWork _unitOfWork;
+    private readonly IRepositorioUsuario _repositorioUsuario;
     private readonly IValidator<UsuarioRequisicaoAutenticacao> _usuarioValidarAutenticacao;
 
     public UsuarioAutenticacaoServico(IValidator<UsuarioRequisicaoAutenticacao> usuarioValidarAutenticacao,
-                                      IUnitOfWork unitOfWork)
+                                      IRepositorioUsuario repositorioUsuario)
     {
-        _unitOfWork = unitOfWork;
+        _repositorioUsuario = repositorioUsuario;
         _usuarioValidarAutenticacao = usuarioValidarAutenticacao;
     }
 
@@ -25,7 +25,7 @@ public class UsuarioAutenticacaoServico : IServicoUsuarioAutenticacao
         var validaAutenticacao = await _usuarioValidarAutenticacao.ValidateAsync(usuarioRequisicao);
         if (validaAutenticacao.IsValid)
         {
-            var x = _unitOfWork._UsuariosRespositorio.Autenticacao(usuarioRequisicao);
+            var x = _repositorioUsuario.Autenticacao(usuarioRequisicao);
             return new CriandoObjetoResultado((int)ERetornosApi.Ok,
                                               true,
                                               Mensagens.

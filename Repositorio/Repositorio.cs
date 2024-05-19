@@ -1,33 +1,34 @@
 ﻿using MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
+using Microsoft.EntityFrameworkCore;
 
 namespace MSCadastroMedicoPacienteRepositorio;
 
-public class Repositorio<T> : IRepositorio<T> where T : class
+public class Repositorio<TEntidade> : IRepositorio<TEntidade> where TEntidade : class 
 {
-    protected readonly ApplicationDbContext _context;
+    private readonly DbContext _context;
 
-    public Repositorio(ApplicationDbContext context)
+    public Repositorio(DbContext context)
     {
         _context = context ;
     }
 
-    public IQueryable<T> GetAll()
+    public IQueryable<TEntidade> GetAll()
     {
-        return _context.Set<T>().AsQueryable();
+        return _context.Set<TEntidade>().AsQueryable();
     }
 
-    public void Add(T entity)
+    public void Add(TEntidade entity)
     {
-        _context.Set<T>().Add(entity);
+        _context.Set<TEntidade>().Add(entity);
     }
 
-    public void Update(T entity)
+    public void Update(TEntidade entity)
     {
-        _context.Set<T>().Update(entity);
+        _context.Set<TEntidade>().Update(entity);
     }
 
-    public void Delete(T entity)
+    public void Delete(TEntidade entity)
     {
-        _context.Set<T>().Remove(entity);
+        _context.Set<TEntidade>().Remove(entity);
     }
 }

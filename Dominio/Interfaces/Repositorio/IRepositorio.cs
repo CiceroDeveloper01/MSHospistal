@@ -1,9 +1,9 @@
 ﻿namespace MSCadastroMedicoPacienteDominio.Interfaces.Repositorio;
 
-public interface IRepositorio<T> where T : class
+public interface IRepositorio<TEntidade> where TEntidade : class
 {
-    IQueryable<T> GetAll();
-    void Add(T entity);
-    void Update(T entity);
-    void Delete(T entity);
+    IQueryable<TEntidade> GetAll();
+    void Add(TEntidade entity);
+    void Update(TEntidade entity);
+    void Delete(TEntidade entity);
 }
