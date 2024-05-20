@@ -5,6 +5,10 @@ using MSCadastroMedicoPacienteDominio.Usuarios;
 using MSCadastroMedicoPacienteShared.Comandos.Dominio;
 using MSCadastroMedicoPacienteShared.Comandos.Interfaces;
 using MSCadastroMedicoPacienteShared.Enums;
+using MSCadastroMedicoPacienteDominio.Usuarios.Mapeador;
+using MSCadastroMedicoPacienteShared.Seguranca;
+using System.Text.Json;
+using System;
 
 namespace MSCadastroMedicoPacienteServicos.Usuarios;
 
@@ -25,13 +29,14 @@ public class UsuarioAutenticacaoServico : IServicoUsuarioAutenticacao
         var validaAutenticacao = await _usuarioValidarAutenticacao.ValidateAsync(usuarioRequisicao);
         if (validaAutenticacao.IsValid)
         {
-            var x = _repositorioUsuario.Autenticacao(usuarioRequisicao);
+            var usuario = await _repositorioUsuario.Autenticacao(usuarioRequisicao);
+            var usuuarioAutenticacao = usuario.UsuarioDominioParaUsuarioAutenticacao();
             return new CriandoObjetoResultado((int)ERetornosApi.Ok,
                                               true,
                                               Mensagens.
                                               Autenticacao.
                                               Value.
-                                              Replace(Mensagens.NomeCampo, nameof(UsuarioRequisicaoAutenticacao)), "Objeto DTO");
+                                              Replace(Mensagens.NomeCampo, nameof(UsuarioRequisicaoAutenticacao)), CriarTokenAutenticacao.GerarToken(JsonSerializer.Serialize(usuuarioAutenticacao), DateTime.Now.AddHours(8)));
         }
         else
             return new CriandoObjetoResultado((int)ERetornosApi.NotAcceptable, 

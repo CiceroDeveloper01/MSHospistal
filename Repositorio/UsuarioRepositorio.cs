@@ -13,9 +13,7 @@ public class UsuarioRepositorio : Repositorio<UsuarioDominio>, IRepositorioUsuar
         _context = context;
     }
 
-    public async Task<UsuarioDominio> Autenticacao(UsuarioRequisicaoAutenticacao usuarioRequisicao)
-    {
-        return await _context.Usuario.Where(x => x.Email == usuarioRequisicao.Email
-        && x.Senha == x.Senha).FirstOrDefaultAsync();
-    }
+    public async Task<UsuarioDominio> Autenticacao(UsuarioRequisicaoAutenticacao usuarioRequisicao) 
+        => await _context.Usuario.Where(x => x.Email == usuarioRequisicao.Email
+           && x.Senha == x.Senha).FirstOrDefaultAsync();
 }

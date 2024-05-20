@@ -16,9 +16,9 @@ public class UsuarioValidarAutenticacao : AbstractValidator<UsuarioRequisicaoAut
                .NotNull()
                .NotEmpty()
                .WithMessage(Mensagens.CampoObrigatorioNaoPreenchido.Value.Replace(Mensagens.NomeCampo, "Senha"));
-        RuleFor(usuarioValidarAutenticacao => usuarioValidarAutenticacao.Senha)
-               .EmailAddress()
-               .WithMessage(Mensagens.EmailInvalido.Value.Replace(Mensagens.NomeCampo, "Email"));
+        //RuleFor(usuarioValidarAutenticacao => usuarioValidarAutenticacao.Senha)
+          //     .EmailAddress()
+            //   .WithMessage(Mensagens.EmailInvalido.Value.Replace(Mensagens.NomeCampo, "Email"));
 
     }
 }
